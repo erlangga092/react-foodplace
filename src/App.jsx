@@ -16,81 +16,81 @@ import UserAddress from "./pages/UserAddress";
 import UserAddressAdd from "./pages/UserAddressAdd";
 
 export default function App() {
-    useEffect(() => {
-        listen();
-    }, []);
+  useEffect(() => {
+    listen();
+  }, []);
 
-    return (
-        <Provider store={store}>
-            <HashRouter>
-                <Routes>
-                    <Route path="/logout" element={<Logout />} />
-                    <Route
-                        path="/checkout"
-                        element={
-                            <GuardRoute>
-                                <Checkout />
-                            </GuardRoute>
-                        }
-                    />
+  return (
+    <Provider store={store}>
+      <HashRouter>
+        <Routes>
+          <Route path="/logout" element={<Logout />} />
+          <Route
+            path="/checkout"
+            element={
+              <GuardRoute>
+                <Checkout />
+              </GuardRoute>
+            }
+          />
 
-                    <Route
-                        path="/alamat-pengiriman/tambah"
-                        element={
-                            <GuardRoute>
-                                <UserAddressAdd />
-                            </GuardRoute>
-                        }
-                    />
+          <Route
+            path="/alamat-pengiriman/tambah"
+            element={
+              <GuardRoute>
+                <UserAddressAdd />
+              </GuardRoute>
+            }
+          />
 
-                    <Route
-                        path="/alamat-pengiriman"
-                        element={
-                            <GuardRoute>
-                                <UserAddress />
-                            </GuardRoute>
-                        }
-                    />
+          <Route
+            path="/alamat-pengiriman"
+            element={
+              <GuardRoute>
+                <UserAddress />
+              </GuardRoute>
+            }
+          />
 
-                    <Route
-                        path="/login"
-                        element={
-                            <GuestOnlyRoute>
-                                <Login />
-                            </GuestOnlyRoute>
-                        }
-                    />
+          <Route
+            path="/login"
+            element={
+              <GuestOnlyRoute>
+                <Login />
+              </GuestOnlyRoute>
+            }
+          />
 
-                    <Route
-                        path="/register-success"
-                        element={
-                            <GuestOnlyRoute>
-                                <RegisterSuccess />
-                            </GuestOnlyRoute>
-                        }
-                    />
+          <Route
+            path="/register-success"
+            element={
+              <GuestOnlyRoute>
+                <RegisterSuccess />
+              </GuestOnlyRoute>
+            }
+          />
 
-                    <Route
-                        path="/register"
-                        element={
-                            <GuestOnlyRoute>
-                                <Register />
-                            </GuestOnlyRoute>
-                        }
-                    />
+          <Route
+            path="/register"
+            element={
+              <GuestOnlyRoute>
+                <Register />
+              </GuestOnlyRoute>
+            }
+          />
 
-                    <Route
-                        path="/login"
-                        element={
-                            <GuestOnlyRoute>
-                                <Login />
-                            </GuestOnlyRoute>
-                        }
-                    />
+          <Route
+            path="/login"
+            element={
+              <GuestOnlyRoute>
+                <Login />
+              </GuestOnlyRoute>
+            }
+          />
 
-                    <Route path="/" element={<Home />} />
-                </Routes>
-            </HashRouter>
-        </Provider>
-    );
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </HashRouter>
+    </Provider>
+  );
 }
