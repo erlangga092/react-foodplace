@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 export default function GuardRoute(props) {
-  const user = useSelector((state) => state.auth);
+    const user = useSelector((state) => state.auth);
 
-  return user ? props.children : <Navigate replace to="/login" />;
+    return user ? props.children : <Navigate replace to="/login" />;
 }

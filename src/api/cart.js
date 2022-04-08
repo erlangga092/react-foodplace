@@ -4,33 +4,33 @@ import { config } from "../config";
 import { setItems } from "../features/Cart/actions";
 
 export const saveCart = async (token, cart) => {
-  let response = await axios.put(
-    `${config.api_host}/api/carts`,
-    { items: cart },
-    {
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
-    }
-  );
+    let response = await axios.put(
+        `${config.api_host}/api/carts`,
+        { items: cart },
+        {
+            headers: {
+                authorization: `Bearer ${token}`,
+            },
+        }
+    );
 
-  return response;
+    return response;
 };
 
 export const getCart = async () => {
-  let { token } = window.localStorage.getItem("auth")
-    ? JSON.parse(window.localStorage.getItem("auth"))
-    : {};
+    let { token } = window.localStorage.getItem("auth")
+        ? JSON.parse(window.localStorage.getItem("auth"))
+        : {};
 
-  if (!token) return;
+    if (!token) return;
 
-  let { data } = await axios.get(`${config.api_host}/api/carts`, {
-    headers: {
-      authorization: `Bearer ${token}`,
-    },
-  });
+    let { data } = await axios.get(`${config.api_host}/api/carts`, {
+        headers: {
+            authorization: `Bearer ${token}`,
+        },
+    });
 
-  if (!data.error) {
-    store.dispatch(setItems(data));
-  }
+    if (!data.error) {
+        store.dispatch(setItems(data));
+    }
 };

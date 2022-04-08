@@ -8,23 +8,23 @@ import { userLogout } from "../../features/Auth/actions";
 import { clearItems } from "../../features/Cart/actions";
 
 export default function Logout() {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-  useEffect(() => {
-    logout()
-      .then(() => dispatch(userLogout()))
-      .then(() => dispatch(clearItems()))
-      .then(() => navigate("/login"));
-  }, [navigate, dispatch]);
+    useEffect(() => {
+        logout()
+            .then(() => dispatch(userLogout()))
+            .then(() => dispatch(clearItems()))
+            .then(() => navigate("/login"));
+    }, [navigate, dispatch]);
 
-  return (
-    <LayoutOne>
-      <div className="text-center flex flex-col justify-center items-center">
-        <BounceLoader color="red" />
-        <br />
-        Logout ...
-      </div>
-    </LayoutOne>
-  );
+    return (
+        <LayoutOne>
+            <div className="text-center flex flex-col justify-center items-center">
+                <BounceLoader color="red" />
+                <br />
+                Logout ...
+            </div>
+        </LayoutOne>
+    );
 }

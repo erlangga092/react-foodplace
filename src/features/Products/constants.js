@@ -1,9 +1,9 @@
 export const START_FETCHING_PRODUCT =
-  "features/Products/START_FETCHING_PRODUCT";
+    "features/Products/START_FETCHING_PRODUCT";
 export const ERROR_FETCHING_PRODUCT =
-  "features/Products/ERROR_FETCHING_PRODUCT";
+    "features/Products/ERROR_FETCHING_PRODUCT";
 export const SUCCESS_FETCHING_PRODUCT =
-  "features/Products/SUCCESS_FETCHING_PRODUCT";
+    "features/Products/SUCCESS_FETCHING_PRODUCT";
 export const SET_PAGE = "features/Products/SET_PAGE";
 export const SET_KEYWORD = "features/Products/SET_KEYWORD";
 export const SET_CATEGORY = "features/Products/SET_CATEGORY";
